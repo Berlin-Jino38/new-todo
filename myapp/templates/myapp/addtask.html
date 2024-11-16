@@ -1,0 +1,25 @@
+{% extends 'myapp/authtemplate.html' %}
+
+{% block content %}
+    <div>
+        <div class="loginfont">Add Task</div>
+        <div>
+            <form method="post">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="title" class="form-label">Title</label>
+                    <input type="text" class="form-control" id="title" name="title" required>
+                </div>
+                <div class="mb-3">
+                    <label for="description" class="form-label">Description</label>
+                    <input type="description" class="form-control" id="description" name="description" required>
+                </div>
+                <div class="mb-3">
+                    <label for="date" class="form-label">Date</label>
+                    <input type="date" class="form-control" id="date" name="date" required>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Add task</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}
